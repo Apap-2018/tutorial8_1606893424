@@ -1,3 +1,3 @@
 1. BCryptPasswordEncoder digunakan untuk enkripsi password (fungsi untuk password hashing) . 
 
-2. Baris tersebut digunakan untuk mendapatkan list yang berisikan authorities (roles) , yang disebut juga access control lists.
+2. Baris tersebut digunakan untuk membuat list yang berisikan authorities (roles) , yang disebut juga access control lists.
