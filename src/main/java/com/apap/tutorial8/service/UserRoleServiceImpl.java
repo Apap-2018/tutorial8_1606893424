@@ -28,4 +28,19 @@ public class UserRoleServiceImpl implements UserRoleService {
 		return hashedPassword;
 	}
 
+	@Override
+	public UserRoleModel getDetailByUsername(String username) {
+		// TODO Auto-generated method stub
+		return userDb.findByUsername(username);
+	}
+
+	@Override
+	public void update(UserRoleModel user, String newPassword) {
+		// TODO Auto-generated method stub
+		newPassword=this.encrypt(newPassword);
+		user.setPassword(newPassword);
+		userDb.save(user);
+		
+	}
+
 }

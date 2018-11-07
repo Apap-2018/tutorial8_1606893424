@@ -22,6 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.antMatchers("/css/**").permitAll()
 			.antMatchers("/js/**").permitAll()
 			.antMatchers("/flight/**").hasAnyAuthority("PILOT")
+			.antMatchers("/pilot/**").hasAnyAuthority("ADMIN")
 			.anyRequest().authenticated()
 			.and()
 			.formLogin()
@@ -42,8 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.withUser("cokicoki").password(encoder().encode("enaksekali"))
 			.roles("USER");
 	}
-	*/
 	
+	*/
 	@Bean
 	public BCryptPasswordEncoder encoder() {
 		return new BCryptPasswordEncoder();
@@ -56,6 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
 	}
+	
 
 	
 	

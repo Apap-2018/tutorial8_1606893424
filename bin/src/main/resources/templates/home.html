@@ -10,7 +10,7 @@
 
 <body>
     <nav th:replace="fragments/fragment :: navbar"></nav>
-	<h3 th:text="${message}" style="color:red"></h3>	
+
     <div class="container-fluid">
         <h2 th:text="'Hello '+${#httpServletRequest.remoteUser}+' !'">Login as</h2>
         <div class="row">
@@ -38,33 +38,6 @@
                     		</div>
                     	</form>
                     </div>
-                    
-                    <div class="card-header">
-                        Update Password
-                    </div>
-                    
-                    <div class="card-body">
-                        
-                        <form th:action="@{/user/updatePassword}" method="POST">
-                        <input type="hidden" th:value="${#httpServletRequest.remoteUser}" name="username" />
-                            <div class="row form-group">
-                                <label class="col-sm-4">Password Lama:</label>
-                                <input type="password" class="col-sm-8 form-control input-sm" name="oldPassword">
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-sm-4">Password Baru:</label>
-                                <input type="password" class="col-sm-8 form-control input-sm" name="newPassword">
-                            </div>
-                            <div class="row form-group">
-                                <label class="col-sm-4">Konfirmasi Password Baru:</label>
-                                <input type="password" class="col-sm-8 form-control input-sm" name="confirmPassword">
-                            </div>
-                            <div class="row form-group">
-                                <button type="submit" class="btn btn-primary">Simpan</button>
-                            </div>
-                        </form>
-                    </div>
-                    
                     
                 </div>
             </div>
